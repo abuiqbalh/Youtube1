@@ -29,7 +29,8 @@
                 part: 'snippet', 
                 maxResults: 10
         });
-        request.execute(function(response)  {                                                                                    
+        request.execute(function(response)  {   
+                console.log(response);
                 $('#results').empty()
                 var srchItems = response.result.items;                      
                 $.each(srchItems, function(index, item) {
