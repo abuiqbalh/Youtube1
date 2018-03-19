@@ -34,8 +34,9 @@
                 $('#results').empty()
                 var srchItems = response.result.items;                      
                 $.each(srchItems, function(index, item) {
-                vidTitle = item.snippet.title;  
-
+                vidTitle = item.snippet.title;
+                var video=item.id.vidioId
+                console.log(video);
                 $('#results').append('<pre>' + vidTitle + '</pre>');                      
         })  
     })  
