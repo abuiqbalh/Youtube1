@@ -2,13 +2,21 @@
 <html>
  <head>
  <title>Search</title>
+  <style>
+   .video{
+        width:560;
+        height:315;
+        frameborder:0;
+
+    }
+  </style>
   </head>
   <body>
     <div id="buttons">
     <label> <input id="query" type="text"/><button id="search-button" onclick="keyWordsearch()">Search</button></label>   
 
 
-
+   <div id="video"></div>
     <div id="container">
       <h1>Search Results</h1>
       <ul id="results"></ul>
@@ -35,9 +43,11 @@
                 var srchItems = response.result.items;                      
                 $.each(srchItems, function(index, item) {
                 vidTitle = item.snippet.title;
-                var video=item.id.videoId
+                //var video=item.id.videoId
                 console.log(video);
-                $('#results').append('<pre>' + vidTitle + video +'</pre>');                      
+                $('#results').append('<pre>' + vidTitle +'</pre>'); 
+                var video=$("<iframe>").attr("src","http://www.youtube.com/watch?v"+item.id.videoId).addClass("video");
+                $("#video").append(video);  
         })  
     })  
 }
