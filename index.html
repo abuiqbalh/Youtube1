@@ -46,7 +46,7 @@
                 //var video=item.id.videoId
                 console.log(video);
                 $('#results').append('<pre>' + vidTitle +'</pre>'); 
-                var video=$("<iframe>").attr("src","https://www.youtube.com/v/"+item.id.videoId).addClass("video");
+                var video=$("<iframe>").attr("src","https://www.youtube.com/embed/"+item.id.videoId).addClass("video");
                 $("#video").append(video);  
         })  
     })  
